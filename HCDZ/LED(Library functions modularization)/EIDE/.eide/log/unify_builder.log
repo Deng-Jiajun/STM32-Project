@@ -1,0 +1,20 @@
+[2022-04-05 21:17:53]	[done]
+	build successfully !
+
+[2022-04-05 21:18:18]	[done]
+	build successfully !
+
+[2022-04-05 21:27:11]	[done]
+	build successfully !
+
+[2022-04-05 21:28:02]	compilation failed at : "c:\Users\Deng-\OneDrive\Code\MCU\STM32 Project\HCDZ\LED(Library functions modularization)\User\main.c", exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x018f4] in <a38660f3f427450ba15f9858507cbeb8>:0 
+---
+".\..\User\main.c", line 2: Error:  #5: cannot open source input file "led.h": No such file or directory
+  #include "led.h"
+                  ^
+.\..\User\main.c: 0 warnings, 1 error
+
+[2022-04-05 21:28:57]	[done]
+	build successfully !
+
