@@ -1,7 +1,10 @@
 {
     "files.associations": {
         "stm32f10x.h": "c",
-        "stm32f10x_gpio.h": "c"
+        "stm32f10x_gpio.h": "c",
+        "led.h": "c",
+        "delay.h": "c",
+        "timer3.h": "c"
     },
     "commentTranslate.source": "Bing"
 }
