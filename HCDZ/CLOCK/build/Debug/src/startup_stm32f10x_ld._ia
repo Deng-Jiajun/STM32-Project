@@ -1,1 +1,0 @@
---apcs=interwork --cpu Cortex-M3 --li --pd "__MICROLIB SETA 1" -g -I.\.eide\deps -I.\lib\cmsis -I.\.eide\deps -I.\src -I.\hal\STM32F10x_StdPeriph_Driver -I.\hal\STM32F10x_StdPeriph_Driver\src -I.\hal\STM32F10x_StdPeriph_Driver\inc -o .\build\Debug\src\startup_stm32f10x_ld.o --depend .\build\Debug\src\startup_stm32f10x_ld.d .\src\startup_stm32f10x_ld.s
