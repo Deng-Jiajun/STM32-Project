@@ -4,7 +4,9 @@
         "stm32f10x_gpio.h": "c",
         "led.h": "c",
         "delay.h": "c",
-        "timer3.h": "c"
+        "timer3.h": "c",
+        "sys.h": "c",
+        "key.h": "c"
     },
     "commentTranslate.source": "Bing"
 }
