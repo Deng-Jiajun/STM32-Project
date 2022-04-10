@@ -66,7 +66,7 @@ PLL
 
 ![image-20220406205803158](img/image-20220406205803158.png)
 
-> 位段是 `23:0`，所以计数最大值是 $$2^{24}$$
+> 位段是 `23:0`，所以计数最大值是 $2^{24}$
 
 对应 SysTick 结构体👇
 
@@ -112,9 +112,9 @@ void my_delay_ms(u16 nms)
 }
 ```
 
-有点没搞懂 CTRL 的分频是怎么回事，在[权威指南里](bookxnotepro://opennote/?nb={01a25f6c-fe16-454c-8f38-591392487e16}&book=da99ea474b8a9ac1f85ec2d26dd693a1&page=137&x=133&y=349&id=39)只说 CLKSOURCE 是外部或者内部时钟源，在[编程手册](bookxnotepro://opennote/?nb={01a25f6c-fe16-454c-8f38-591392487e16}&book=060af922add9793b5c77ec3819c0d3d3&page=150&x=218&y=389&id=38)里写的一个是 AHB/8 分频，一个 是 AHB，找到[参考手册](bookxnotepro://opennote/?nb={01a25f6c-fe16-454c-8f38-591392487e16}&book=96b8b5eee15efdadc4e523147a804910&page=125&x=376&y=405&id=41)，才明白大概的意思：「[RCC 通过 AHB 时钟(HCLK) 8 分频后作为 Cortex 系统定时器 (SysTick) 的外部时钟](bookxnotepro://opennote/?nb={01a25f6c-fe16-454c-8f38-591392487e16}&book=47f07b86a273b11dbbc9034f7a90f448&page=80&x=279&y=195&id=42)」
+有点没搞懂 CTRL 的分频是怎么回事，在[权威指南里](bookxnotepro://opennote/?nb={01a25f6c-fe16-454c-8f38-591392487e16}&book=da99ea474b8a9ac1f85ec2d26dd693a1&page=137&x=133&y=349&id=39)只说 CLKSOURCE 是外部或者内部时钟源，在[编程手册](bookxnotepro://opennote/?nb={01a25f6c-fe16-454c-8f38-591392487e16}&book=060af922add9793b5c77ec3819c0d3d3&page=150&x=218&y=389&id=38)里写的一个是 AHB/8 分频，一个 是 AHB，找到[参考手册](bookxnotepro://opennote/?nb={01a25f6c-fe16-454c-8f38-591392487e16}&book=96b8b5eee15efdadc4e523147a804910&page=125&x=376&y=405&id=41)，才明白大概的意思：「[RCC 通过 AHB 时钟(HCLK) 8 分频后作为 Cortex 系统定时器 (SysTick) 的外部时钟](bookxnotepro://opennote/?nb={01a25f6c-fe16-454c-8f38-591392487e16}&book=47f07b86a273b11dbbc9034f7a90f448&page=55&x=279&y=685&id=45)」
 
-![9c1ac7319f1cc6f23fffd85c92be8e50](img/9c1ac7319f1cc6f23fffd85c92be8e50.png)
+![20cbef90979872f5d8c3915daa31908c](img/20cbef90979872f5d8c3915daa31908c.png)
 
 再对照提供的 delay 实现，可以更好理解👇
 
@@ -167,7 +167,7 @@ void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource)
 
 ## `SysTick_CLKSourceConfig()` 和 `SysTick_Config()`
 
-这里给出 `SysTick_Config` 的实现，`SysTick_CLKSourceConfig` 上面已列出
+这里给出 `SysTick_Config` 的实现，`SysTick_CLKSourceConfig` 上面已列出
 
 ```c
 static __INLINE uint32_t SysTick_Config(uint32_t ticks)
@@ -184,4 +184,4 @@ static __INLINE uint32_t SysTick_Config(uint32_t ticks)
 }
 ```
 
-注意两个函数的区别，`SysTick_CLKSourceConfig()` 只配置时钟源，`SysTick_Config()` 不仅配置了时钟源，同时也对中断进行了相关配置
+注意两个函数的区别，`SysTick_CLKSourceConfig()` 只配置时钟源，`SysTick_Config()` 不仅配置了时钟源，同时也对中断进行了相关配置
