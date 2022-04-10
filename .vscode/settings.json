@@ -6,7 +6,9 @@
         "delay.h": "c",
         "timer3.h": "c",
         "sys.h": "c",
-        "key.h": "c"
+        "key.h": "c",
+        "my_usart.h": "c",
+        "stm32f10x_usart.h": "c"
     },
-    "commentTranslate.source": "Bing"
+    "commentTranslate.source": "Baidu"
 }
