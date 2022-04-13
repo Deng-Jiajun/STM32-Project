@@ -8,13 +8,16 @@
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE"
+                "_UNICODE",
+                "USE_STDPERIPH_DRIVER",
+                "STM32F10X_LD"
             ],
             "windowsSdkVersion": "10.0.17763.0",
-            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/Hostx64/x64/cl.exe",
-            "cStandard": "c17",
+            "compilerPath": "D:/Program Files/MinGW/x86_64-4.9.1-release-posix-seh-rt_v3-rev2/mingw64/bin/gcc.exe",
+            "cStandard": "c89",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerArgs": []
         }
     ],
     "version": 4
