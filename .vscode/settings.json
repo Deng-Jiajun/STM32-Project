@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.s": "arm",
         "stm32f10x.h": "c",
         "stm32f10x_gpio.h": "c",
         "led.h": "c",
@@ -8,7 +9,8 @@
         "sys.h": "c",
         "key.h": "c",
         "my_usart.h": "c",
-        "stm32f10x_usart.h": "c"
+        "stm32f10x_usart.h": "c",
+        "oled.h": "c"
     },
     "commentTranslate.source": "Baidu"
 }
