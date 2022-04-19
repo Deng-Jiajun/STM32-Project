@@ -10,7 +10,9 @@
         "key.h": "c",
         "my_usart.h": "c",
         "stm32f10x_usart.h": "c",
-        "oled.h": "c"
+        "oled.h": "c",
+        "stm32f10x_tim.h": "c",
+        "timer.h": "c"
     },
-    "commentTranslate.source": "Baidu"
+    "commentTranslate.source": "Google"
 }
