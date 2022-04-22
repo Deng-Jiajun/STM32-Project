@@ -12,7 +12,10 @@
         "stm32f10x_usart.h": "c",
         "oled.h": "c",
         "stm32f10x_tim.h": "c",
-        "timer.h": "c"
+        "timer.h": "c",
+        "stdio.h": "c",
+        "test.h": "c",
+        "usart.h": "c"
     },
     "commentTranslate.source": "Google"
 }

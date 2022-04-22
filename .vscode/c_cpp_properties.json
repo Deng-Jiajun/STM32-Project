@@ -10,7 +10,7 @@
                 "UNICODE",
                 "_UNICODE",
                 "USE_STDPERIPH_DRIVER",
-                "STM32F10X_LD"
+                "STM32F10X_MD"
             ],
             "windowsSdkVersion": "10.0.17763.0",
             "compilerPath": "D:/Program Files/MinGW/x86_64-4.9.1-release-posix-seh-rt_v3-rev2/mingw64/bin/gcc.exe",

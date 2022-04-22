@@ -350,6 +350,12 @@ void USART_ClearFlag(USART_TypeDef* USARTx, uint16_t USART_FLAG)
 > 为什么敢把其他所有位都取反啊🤔
 >
 > `#define USART_FLAG_TC             ((uint16_t)0x0040)`
+>
+> - 仔细看了一下参考手册关于 [USART_SR](bookxnotepro://opennote/?nb={01a25f6c-fe16-454c-8f38-591392487e16}&book=47f07b86a273b11dbbc9034f7a90f448&page=539&x=234&y=140&id=231) 每一位的描述，大概是因为：对于 `USART_SR` 的每一位，都只能通过硬件置 1
+>   - 就，挺离谱的，所以就可以这么随便吗😓
+>   - 一些参考
+>     - [USART_ClearITPendingBith 和 USART_ClearFlag 的区别](https://www.csdn.net/tags/NtTagg3sMDQ4NjktYmxvZwO0O0OO0O0O.html)（怪长的，没看完）
+>     - [stm32为什么给有些寄存器赋值确不会影响其他位？](https://blog.csdn.net/kernel1101/article/details/47448543)
 
 
 
@@ -436,9 +442,9 @@ void USART_SendString( USART_TypeDef * USARTx, char *str)
 }
 ```
 
-`USART_SendByte()` 就是照抄库函数的 `USART_SendData()`，然后加一句 `TXE` 的判断，其目的在前面发送单字符的部分有过详细分析，是**避免数据覆盖**
+`USART_SendByte()` 就是照抄库函数的 `USART_SendData()`，然后加一句 `TXE` 的等待，其目的在前面发送单字符的部分有过详细分析，是**避免数据覆盖**
 
-`USART_SendString()` 则是循环调用 `USART_SendByte()`，最后加一句 `TC` 的判断，作用与判断 `TXE` 类似，这里是为了**保证整个字符串都传输完毕**
+`USART_SendString()` 则是循环调用 `USART_SendByte()`，最后加一句 `TC` 的等待，作用与判断 `TXE` 类似，这里是为了**保证整个字符串都传输完毕**
 
 
 
@@ -482,7 +488,7 @@ uint8_t USART_ReceieByte(USART_TypeDef *USARTx)
 
 	while (USART_GetFlagStatus(USARTx, USART_FLAG_RXNE) == RESET)
 		;
-	return (uint16_t)(USARTx->DR & (uint16_t)0x01FF);
+	return (uint8_t)(USARTx->DR & (uint16_t)0x01FF);
 }
 ```
 
