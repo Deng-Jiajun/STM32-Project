@@ -1,8 +1,0 @@
---cpu Cortex-M3
-".\objects\main.o"
-".\objects\startup_stm32f10x_ld.o"
-".\objects\stm32f10x_gpio.o"
---strict --scatter ".\Objects\LED.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
---info sizes --info totals --info unused --info veneers
---list ".\Listings\LED.map" -o .\Objects\LED.axf
