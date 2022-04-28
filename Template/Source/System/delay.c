@@ -10,6 +10,7 @@ void delay_init(void)
 	fac_ms = (uint16_t)fac_us * 1000;
 }
 
+// !最大只能填 1864135
 void delay_us(uint32_t nus)
 {
 	uint32_t temp;
@@ -24,6 +25,7 @@ void delay_us(uint32_t nus)
 	SysTick->VAL = 0X00;							//清空计数器
 }
 
+// !最大只能填 1864
 void delay_ms(uint16_t nms)
 {
 	uint32_t temp;
@@ -37,3 +39,4 @@ void delay_ms(uint16_t nms)
 	SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;		//关闭计数器
 	SysTick->VAL = 0X00;							//清空计数器
 }
+

@@ -17,5 +17,13 @@
         "test.h": "c",
         "usart.h": "c"
     },
-    "commentTranslate.source": "Google"
+    "commentTranslate.source": "Google",
+    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.clang_format_style": "Visual Studio",
+    "C_Cpp.clang_format_sortIncludes": null,
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.intelliSenseMemoryLimit": 8192
 }

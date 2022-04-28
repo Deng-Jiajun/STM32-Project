@@ -29,6 +29,7 @@
 ".\objects\usart.o"
 ".\objects\sys.o"
 ".\objects\rcc.o"
+".\objects\assert_param.o"
 ".\objects\led.o"
 ".\objects\key.o"
 ".\objects\oled.o"

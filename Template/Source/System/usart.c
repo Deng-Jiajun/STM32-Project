@@ -4,7 +4,7 @@
  * @brief USART 配置函数
  *
  */
-void USART1_Config(void)
+void USART1_Init(void)
 {
 	/* USART 初始化结构体 */
 	USART_InitTypeDef USART_InitStructure;

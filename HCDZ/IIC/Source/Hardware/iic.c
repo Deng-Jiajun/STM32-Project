@@ -74,7 +74,7 @@ void IIC_Stop(void)
 }
 
 /**
- * @brief 写入一个字节的数据
+ * @brief 写入一个字节（byte, 8bit）的数据
  *
  * @param dat 要写入的数据
  * @return uint8_t 收到的应答信号

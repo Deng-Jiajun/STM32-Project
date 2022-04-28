@@ -2,7 +2,6 @@
 #define __DELAY_H
 #include "sys.h"
 
-
 	
 void delay_init(void);
 void delay_ms(uint16_t nms);

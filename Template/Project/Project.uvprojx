@@ -548,6 +548,11 @@
               <FileType>1</FileType>
               <FilePath>..\Source\System\rcc.c</FilePath>
             </File>
+            <File>
+              <FileName>assert_param.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\System\assert_param.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -564,14 +569,19 @@
               <FilePath>..\Source\Hardware\key.c</FilePath>
             </File>
             <File>
-              <FileName>oled.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Source\Hardware\oled.c</FilePath>
-            </File>
-            <File>
               <FileName>dht11.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Source\Hardware\dht11.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\Hardware\iic.c</FilePath>
+            </File>
+            <File>
+              <FileName>oled_iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\Hardware\oled_iic.c</FilePath>
             </File>
           </Files>
         </Group>

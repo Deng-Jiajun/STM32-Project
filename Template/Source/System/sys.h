@@ -8,9 +8,11 @@
 #include "usart.h"
 #include "stdio.h"
 #include "test.h"
-#include "oled.h"
+#include "iic.h"
+#include "oled_iic.h"
 #include "dht11.h"
 #include "rcc.h"
+#include "assert_param.h"
 
 /* 类 bool 型定义 */
 #define SUCCEED ((uint8_t)0x01)

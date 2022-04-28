@@ -1,89 +1,84 @@
 #include "sys.h"
 
-/*
- ! ÎªÁË·¢ËÍÖĞÎÄ£¬Õâ¸öÎÄ¼şµÄ±àÂë¸ñÊ½ÊÇ GB2312
- ! In order to send Chinese, the encoding format of this file is GB2312
- */
-
 /**
- * @brief LED ²âÊÔº¯Êı
+ * @brief LED æµ‹è¯•å‡½æ•°
  *
- * @note Ô¤ÆÚĞ§¹û£º
- *       LED1 ´ò¿ª£¬0.5Ãëºó LED2 ´ò¿ª£¬0.5Ãëºó LED1 ¹Ø±Õ£¬0.5Ãëºó LED2 ¹Ø±Õ£¬
- *       0.5Ãëºó LED1 ºÍ LED2 Í¬Ê±´ò¿ª£¬0.5Ãëºó LED1 ºÍ LED2 Í¬Ê±¹Ø±Õ
+ * @note é¢„æœŸæ•ˆæœï¼š
+ *       LED1 æ‰“å¼€ï¼Œ0.5ç§’å LED2 æ‰“å¼€ï¼Œ0.5ç§’å LED1 å…³é—­ï¼Œ0.5ç§’å LED2 å…³é—­ï¼Œ
+ *       0.5ç§’å LED1 å’Œ LED2 åŒæ—¶æ‰“å¼€ï¼Œ0.5ç§’å LED1 å’Œ LED2 åŒæ—¶å…³é—­
  */
 void TEST_LED(void)
 {
-    /* Ö»ÓĞÁ½¸öµÆ£¬¸ã²»ÁËÁ÷Ë®µÆ */
+    /* åªæœ‰ä¸¤ä¸ªç¯ï¼Œæä¸äº†æµæ°´ç¯ */
 
-    /* delay ³õÊ¼»¯ */
+    /* delay åˆå§‹åŒ– */
     delay_init();
 
-    /* LED ³õÊ¼»¯ */
+    /* LED åˆå§‹åŒ– */
     LED_Init();
 
-    /* ¿ªÆô LED1 */
+    /* å¼€å¯ LED1 */
     LED_On(1);
     delay_ms(500);
 
-    /* ¿ªÆô LED2 */
+    /* å¼€å¯ LED2 */
     LED_On(2);
     delay_ms(500);
 
-    /* ¹Ø±Õ LED1 */
+    /* å…³é—­ LED1 */
     LED_Off(1);
     delay_ms(500);
 
-    /* ¹Ø±Õ LED2 */
+    /* å…³é—­ LED2 */
     LED_Off(2);
     delay_ms(500);
 
-    /* Í¬Ê±¿ªÆô LED1 ºÍ LED2 */
+    /* åŒæ—¶å¼€å¯ LED1 å’Œ LED2 */
     LED_Toggle(1);
     LED_Toggle(2);
 
     delay_ms(500);
 
-    /* Í¬Ê±¹Ø±Õ LED1 ºÍ LED2 */
+    /* åŒæ—¶å…³é—­ LED1 å’Œ LED2 */
     LED_Toggle(1);
     LED_Toggle(2);
 }
 
-/* °´¼ü°´ÏÂ±êÖ¾Î» */
+/* æŒ‰é”®æŒ‰ä¸‹æ ‡å¿—ä½ */
 extern uint8_t flag;
 /**
- * @brief °´¼ü²âÊÔº¯Êı
- * @note Ô¤ÆÚĞ§¹û£º°´ÏÂ KEY1£¬·Å¿ªºó LED1 ÁÁ 2 Ãëºó¹Ø±Õ
+ * @brief æŒ‰é”®æµ‹è¯•å‡½æ•°
+ * @note é¢„æœŸæ•ˆæœï¼šæŒ‰ä¸‹ KEY1ï¼Œæ”¾å¼€å LED1 äº® 2 ç§’åå…³é—­
  */
 void TEST_KEY(void)
 {
-    /*  delay ³õÊ¼»¯ */
+    /*  delay åˆå§‹åŒ– */
     delay_init();
 
-    /* ³õÊ¼»¯ LED */
+    /* åˆå§‹åŒ– LED */
     LED_Init();
 
-    /* ³õÊ¼»¯ delay */
+    /* åˆå§‹åŒ– delay */
     delay_init();
 
-    /* ³õÊ¼»¯°´¼ü */
+    /* åˆå§‹åŒ–æŒ‰é”® */
     KEY_GPIO_Config();
 
     while (1)
     {
-        /* °´¼üÉ¨Ãè */
+        /* æŒ‰é”®æ‰«æ */
         KEY_Scan();
-        /* Èç¹û°´¼ü°´ÏÂ */
+        /* å¦‚æœæŒ‰é”®æŒ‰ä¸‹ */
         if (flag == 1)
         {
-            /* µãÁÁ LED1 2Ãë */
+            /* ç‚¹äº® LED1 2ç§’ */
             LED_On(1);
             delay_ms(500);
             delay_ms(500);
             delay_ms(500);
             delay_ms(500);
 
-            /* È»ºó¹Ø±Õ LED1 */
+            /* ç„¶åå…³é—­ LED1 */
             LED_Off(1);
 
             flag = 0;
@@ -92,13 +87,13 @@ void TEST_KEY(void)
 }
 
 /**
- * @brief USART ²âÊÔº¯Êı
- * @note Ô¤ÆÚĞ§¹û£º´®¿Ú½ÓÊÕµ½Êı¾İºó£¨Í¨¹ı´®¿Ú£©Ô­Ñù·¢³ö
+ * @brief USART æµ‹è¯•å‡½æ•°
+ * @note é¢„æœŸæ•ˆæœï¼šä¸²å£æ¥æ”¶åˆ°æ•°æ®åï¼ˆé€šè¿‡ä¸²å£ï¼‰åŸæ ·å‘å‡º
  */
 void TEST_USART1(void)
 {
     char temp;
-    USART1_Config();
+    USART1_Init();
 
     while (1)
     {
@@ -108,79 +103,105 @@ void TEST_USART1(void)
 }
 
 /**
- * @brief printf ÖØ¶¨Ïò²âÊÔº¯Êı£¨ÖØ¶¨Ïòµ½ USART1£©
- * @note Ô¤ÆÚĞ§¹û£ºÃ¿Ãë·¢ËÍÁ½ĞĞ×Ö·û´®
+ * @brief printf é‡å®šå‘æµ‹è¯•å‡½æ•°ï¼ˆé‡å®šå‘åˆ° USART1ï¼‰
+ * @note é¢„æœŸæ•ˆæœï¼šæ¯ç§’å‘é€ä¸¤è¡Œå­—ç¬¦ä¸²
  */
 void TEST_Redirect_Printf(void)
 {
     int count = 0;
 
-    /*  delay ³õÊ¼»¯ */
+    /*  delay åˆå§‹åŒ– */
     delay_init();
 
-    /* USART1 ÅäÖÃ£¨³õÊ¼»¯£© */
-    USART1_Config();
+    /* USART1 é…ç½®ï¼ˆåˆå§‹åŒ–ï¼‰ */
+    USART1_Init();
     while (1)
     {
-        printf("ÄãºÃ£¬ÊÀ½ç£¡Hello World!\r\n");
+        printf("Hello World!\r\n");
         printf("count = %d\r\n", count++);
         delay_ms(1000);
     }
 }
 
 /**
- * @brief OLED ²âÊÔº¯Êı
- * @note Ô¤ÆÚĞ§¹û£ºÏÔÊ¾ÈıĞĞÎÄ×Ö
+ * @brief OLED æµ‹è¯•å‡½æ•°
+ * @note é¢„æœŸæ•ˆæœï¼šæ˜¾ç¤ºä¸‰è¡Œæ–‡å­—
  */
 void TEST_OLED(void)
 {
     int count = 0;
 
-    /*  delay ³õÊ¼»¯ */
+    /*  delay åˆå§‹åŒ– */
     delay_init();
 
-    /* OLED ³õÊ¼»¯ */
+    /* OLED åˆå§‹åŒ– */
     OLED_Init();
 
-    /* OLED ÇåÆÁ */
+    /* OLED æ¸…å± */
     OLED_Clear();
-    OLED_ShowString(1, 1, "Hello World!", 16);
-    OLED_ShowString(1, 3, "count: ", 16);
+    OLED_ShowStr(0, 0, "Hello World!");
+    OLED_ShowStr(1, 0, "count: ");
+
+    /* ä¸­æ–‡æ˜¾ç¤ºæµ‹è¯• */
+    OLED_ShowChineseChar(2, 0, 0); /* "ä¸­", 0 */
+    OLED_ShowChineseChar(2, 1, 1); /* "æ–‡", 1 */
+    OLED_ShowChineseChar(2, 2, 2); /* "æ˜¾", 2 */
+    OLED_ShowChineseChar(2, 3, 3); /* "ç¤º", 3 */
+    OLED_ShowChineseChar(2, 4, 4); /* "æµ‹", 4 */
+    OLED_ShowChineseChar(2, 5, 5); /* "è¯•", 5 */
+    OLED_ShowChineseChar(2, 6, 6); /* "ï¼", 6 */
+
+    OLED_ShowStr(3, 0, "abcdefgh12345678");
 
     while (count != 10)
     {
-        OLED_ShowNum(50, 3, count++, 16);
-        delay_ms(1000);
-        OLED_ShowNum(50, 5, count, 16);
+        OLED_ShowNum(1, 7, count++);
+        delay_ms(500);
     }
+    /* OLED æ¸…å± */
+    OLED_Clear();
+
+    /* æ•°å­—æ˜¾ç¤ºæµ‹è¯• */
+    OLED_ShowNum(0, 0, 0);
+    OLED_ShowNum(0, 1, 123456789);
+    OLED_ShowNum(1, 0, -2147483647);
+    OLED_ShowNum(2, 0, INT32_MIN);
+    OLED_ShowNum(3, 0, INT32_MAX);
+
+    while (count != 30)
+    {
+        OLED_ShowNum(1, 14, count++);
+        delay_ms(500);
+    }
+    /* OLED æ¸…å± */
     OLED_Clear();
 }
 
 /**
- * @brief DHT11 ²âÊÔº¯Êı
- *
+ * @brief DHT11 æµ‹è¯•å‡½æ•°
+ * @note é¢„æœŸç»“æœï¼šä¸²å£ å’Œ OLED æ˜¾ç¤ºæ¸©æ¹¿åº¦
  */
 void TEST_DHT11(void)
 {
     uint8_t temper;
     uint8_t humi;
 
-    /*  delay ³õÊ¼»¯ */
+    /*  delay åˆå§‹åŒ– */
     delay_init();
 
-    /* USART1 ÅäÖÃ£¨³õÊ¼»¯£© */
-    USART1_Config();
+    /* USART1 é…ç½®ï¼ˆåˆå§‹åŒ–ï¼‰ */
+    USART1_Init();
 
-    /* DHT11 ³õÊ¼»¯ */
+    /* DHT11 åˆå§‹åŒ– */
     DHT11_Init();
 
-    /* OLED ³õÊ¼»¯ */
+    /* OLED åˆå§‹åŒ– */
     OLED_Init();
-    /* OLED ÇåÆÁ */
+    /* OLED æ¸…å± */
     OLED_Clear();
 
-    OLED_ShowString(1, 1, "temperature: ", 16);
-    OLED_ShowString(1, 3, "humidity: ", 16);
+    OLED_ShowStr(0, 0, "temperature: ");
+    OLED_ShowStr(1, 0, "humidity: ");
 
     while (1)
     {
@@ -188,15 +209,74 @@ void TEST_DHT11(void)
         {
             printf("temperature is %d\r\n", temper);
             printf("humidity is %d\r\n", humi);
-            OLED_ShowNum(12 * 8, 1, temper, 16);
-            OLED_ShowNum(9 * 8, 3, humi, 16);
+            OLED_ShowNum(0, 13, temper);
+            OLED_ShowNum(1, 10, humi);
         }
         else
         {
-            printf("tempµÄÖµ²»Îª0£¡\r\n");
+            printf("temp != 0\r\n");
         }
-        
-        /* ¶ÁÈ¡¼ä¸ô²»Ğ¡ÓÚ 1 Ãë */
+
+        /* è¯»å–é—´éš”ä¸å°äº 1 ç§’ */
         delay_ms(1500);
-    };
+    }
+}
+
+/**
+ * @brief å‚æ•°æ£€æŸ¥æµ‹è¯•å‡½æ•°
+ * @note é¢„æœŸç»“æœï¼šä¸²å£è¾“å‡ºé”™è¯¯æç¤ºä¿¡æ¯
+ */
+void TEST_ASSERT_FAIL(void)
+{
+    /*  delay åˆå§‹åŒ– */
+    delay_init();
+
+    /* USART1 é…ç½®ï¼ˆåˆå§‹åŒ–ï¼‰ */
+    USART1_Init();
+
+    /* printf è¾“å‡ºæµ‹è¯• */
+    printf("----- test assert fail -----\r\n");
+
+    /* æ‰“å¼€ä¸€ä¸ªéæ³•åœ°å€çš„å¤–è®¾çš„æ—¶é’Ÿ */
+    RCC_APB2PeriphClockCmd(0x10200000, ENABLE);
+
+    /* æŠ¥é”™ä¿¡æ¯ğŸ‘‡ */
+    // Wrong parameter svalue: file ..\Source\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c on line 1098
+    /* æ²¡æœ‰é¢„æƒ³ä¸­çš„æç¤ºåœ¨ test.c çš„æŸä¸€è¡Œï¼Œä½†æ˜¯å¯ä»¥çŸ¥é“æ˜¯å¤–è®¾åœ°å€å‡ºé”™ */
+
+    /* è¿™ä¸ªå¯ä»¥æŒ‡å®šåœ¨å…·ä½“çš„ä½ç½®ğŸ‘‡ */
+    // ! æƒ³çœ‹åˆ°è¿™å¥çš„æŠ¥é”™éœ€è¦æ³¨é‡Šä¸Šé¢é‚£å¥ï¼Œå› ä¸º assert_failed ä¼šæ‰§è¡Œæ­»å¾ªç¯
+    assert_param(IS_BOOL_TYPE_PARAM(12345));
+    /* è¯´æ˜ assert_failed åªèƒ½æŒ‡å®šåˆ°å…·ä½“æ˜¯å“ªå¥å‚æ•°åˆ¤æ–­çš„è¯­å¥å¼•å‘çš„æŠ¥é”™ */
+}
+
+/**
+ * @brief IIC æµ‹è¯•å‡½æ•°
+ * ç”±äº IIC æœ¬èº«å†…å®¹ä¸å¤šï¼Œæ‰€ä»¥åªæµ‹è¯•èƒ½ä¸èƒ½æ‰¾åˆ° IIC æ€»çº¿ä¸Šçš„ OLED(ä»æœºåœ°å€ 0x3C)
+ * @note é¢„æœŸç»“æœï¼šä¸²å£è¾“å‡º 0x3C ACKï¼Œå…¶ä»–ä¸¤ä¸ªä¸º NACK
+ */
+void TEST_IIC(void)
+{
+    delay_init();
+    USART1_Init();
+    IIC_Init();
+
+    if (IIC_Check_Address(0x3C) == IIC_ACK)
+        printf("IICAddress 0x3C ACK\r\n");
+    else
+        printf("IICAddress 0x3C NACK\r\n");
+
+    if (IIC_Check_Address(0x3D) == IIC_ACK)
+        printf("IICAddress 0x3D ACK\r\n");
+    else
+        printf("IICAddress 0x3D NACK\r\n");
+
+    if (IIC_Check_Address(0x3E) == IIC_ACK)
+        printf("IICAddress 0x3E ACK\r\n");
+    else
+        printf("IICAddress 0x3E NACK\r\n");
+
+    while (1)
+    {
+    }
 }

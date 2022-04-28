@@ -2,14 +2,21 @@
 #define __IIC_H
 #include "sys.h"
 
-
 //ÅäÖÃPA7µÄÊäÈëÊä³öÄ£Ê½
-#define SDA_IN()  {GPIOB->CRL&=0X0FFFFFFF;GPIOB->CRL|=(uint32_t)8<<28;}
-#define SDA_OUT() {GPIOB->CRL&=0X0FFFFFFF;GPIOB->CRL|=(uint32_t)3<<28;}
-	 
-#define IIC_SCL    PBout(6) // Ð´ SCL
-#define IIC_SDA    PBout(7) // Ð´ SDA	 
-#define READ_SDA   PBin(7)  // ¶Á SDA 
+#define SDA_IN()                         \
+    {                                    \
+        GPIOB->CRL &= 0X0FFFFFFF;        \
+        GPIOB->CRL |= (uint32_t)8 << 28; \
+    }
+#define SDA_OUT()                        \
+    {                                    \
+        GPIOB->CRL &= 0X0FFFFFFF;        \
+        GPIOB->CRL |= (uint32_t)3 << 28; \
+    }
+
+#define IIC_SCL PBout(6) // Ð´ SCL
+#define IIC_SDA PBout(7) // Ð´ SDA
+#define READ_SDA PBin(7) // ¶Á SDA
 
 void IIC_Init(void);
 void IIC_Start(void);
