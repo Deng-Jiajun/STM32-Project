@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"name": "Source",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.s": "arm",
+			"stm32f10x.h": "c",
+			"stm32f10x_gpio.h": "c",
+			"led.h": "c",
+			"delay.h": "c",
+			"sys.h": "c",
+			"key.h": "c",
+			"stm32f10x_usart.h": "c",
+			"oled.h": "c",
+			"stm32f10x_tim.h": "c",
+			"timer.h": "c",
+			"stdio.h": "c",
+			"test.h": "c",
+			"usart.h": "c"
+		},
+		"commentTranslate.source": "Google",
+		"C_Cpp.errorSquiggles": "Enabled",
+		"C_Cpp.intelliSenseEngineFallback": "Enabled",
+		"C_Cpp.default.cStandard": "c99",
+		"C_Cpp.clang_format_style": "Visual Studio",
+		"C_Cpp.formatting": "clangFormat",
+		"C_Cpp.intelliSenseMemoryLimit": 8192,
+		"C_Cpp.default.intelliSenseMode": "gcc-x64"
+	}
+}
