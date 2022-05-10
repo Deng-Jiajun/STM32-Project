@@ -67,17 +67,17 @@ uint8_t __WiFi_Init(void)
     //     }
     // }
 
-    // /* WiFi 模块复位(如果一直失败试试手动复位) */
-    // printf("reseting WiFi module...\r\n");
-    // if (__WiFi_Send_AT_Instruction("AT+RST", "ready", 10))
-    // {
-    //     printf("WiFi module rested successfully!\r\n\r\n");
-    // }
-    // else
-    // {
-    //     printf("WiFi module rested failed!\r\n\r\n");
-    //     return 1;
-    // }
+    /* WiFi 模块复位(如果一直失败试试手动复位) */
+    printf("reseting WiFi module...\r\n");
+    if (__WiFi_Send_AT_Instruction("AT+RST", "ready", 10))
+    {
+        printf("WiFi module rested successfully!\r\n\r\n");
+    }
+    else
+    {
+        printf("WiFi module rested failed!\r\n\r\n");
+        return 1;
+    }
 
     /* 配置 WiFi 模式 */
     printf("configuring WiFi module...\r\n");
@@ -91,17 +91,17 @@ uint8_t __WiFi_Init(void)
         return 2;
     }
 
-    // /* 重启 WiFi 模块 */
-    // printf("restarting WiFi module...\r\n");
-    // if (__WiFi_Send_AT_Instruction("AT+RST", "ready", 10))
-    // {
-    //     printf("WiFi module restarted successfully!\r\n\r\n");
-    // }
-    // else
-    // {
-    //     printf("WiFi module restarted failed!\r\n\r\n");
-    //     return 3;
-    // }
+    /* 重启 WiFi 模块 */
+    printf("restarting WiFi module...\r\n");
+    if (__WiFi_Send_AT_Instruction("AT+RST", "ready", 10))
+    {
+        printf("WiFi module restarted successfully!\r\n\r\n");
+    }
+    else
+    {
+        printf("WiFi module restarted failed!\r\n\r\n");
+        return 3;
+    }
 
     /* 取消自动连接 */
     printf("disabling auto-connect...\r\n");

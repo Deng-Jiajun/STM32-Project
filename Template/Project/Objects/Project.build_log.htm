@@ -9,29 +9,156 @@ License Information: aa De, LG, LIC=YA39H-W0XKA-AR6XW-QNRGE-XYRSD-QJVKI
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.36.0.0
-Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 7 (build 960)
-Assembler:       Armasm.exe V5.06 update 7 (build 960)
-Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
-Library Manager: ArmAr.exe V5.06 update 7 (build 960)
-Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
 CPU DLL:         SARMCM3.DLL V5.36.0.0
 Dialog DLL:      DARMSTM.DLL V1.68.0.0
 Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
-C:\Users\Deng-\OneDrive\Code\MCU\STM32 Project\HCDZ\WIFI\Project\Project.uvprojx
-Project File Date:  05/04/2022
+C:\Users\Deng-\OneDrive\Code\MCU\STM32 Project\Template\Project\Project.uvprojx
+Project File Date:  05/09/2022
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Project'
+../Source/Libraries/CMSIS/core_cm3.c(445): error: non-ASM statement in naked function is not supported
+  uint32_t result=0;
+  ^
+../Source/Libraries/CMSIS/core_cm3.c(442): note: attribute is here
+uint32_t __get_PSP(void) __attribute__( ( naked ) );
+                                          ^
+../Source/Libraries/CMSIS/core_cm3.c(465): error: parameter references not allowed in naked functions
+                  "BX  lr     \n\t" : : "r" (topOfProcStack) );
+                                             ^
+../Source/Libraries/CMSIS/core_cm3.c(461): note: attribute is here
+void __set_PSP(uint32_t topOfProcStack) __attribute__( ( naked ) );
+                                                         ^
+../Source/Libraries/CMSIS/core_cm3.c(479): error: non-ASM statement in naked function is not supported
+  uint32_t result=0;
+  ^
+../Source/Libraries/CMSIS/core_cm3.c(476): note: attribute is here
+uint32_t __get_MSP(void) __attribute__( ( naked ) );
+                                          ^
+../Source/Libraries/CMSIS/core_cm3.c(499): error: parameter references not allowed in naked functions
+                  "BX  lr     \n\t" : : "r" (topOfMainStack) );
+                                             ^
+../Source/Libraries/CMSIS/core_cm3.c(495): note: attribute is here
+void __set_MSP(uint32_t topOfMainStack) __attribute__( ( naked ) );
+                                                         ^
+4 errors generated.
+compiling core_cm3.c...
+assembling startup_stm32f10x_md.s...
+compiling system_stm32f10x.c...
+compiling misc.c...
+compiling stm32f10x_cec.c...
+compiling stm32f10x_bkp.c...
+compiling stm32f10x_adc.c...
+compiling stm32f10x_can.c...
+compiling stm32f10x_crc.c...
+compiling stm32f10x_dac.c...
+compiling stm32f10x_dbgmcu.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_iwdg.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_fsmc.c...
+compiling stm32f10x_pwr.c...
+compiling stm32f10x_rtc.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_sdio.c...
+compiling delay.c...
+compiling stm32f10x_wwdg.c...
+compiling stm32f10x_spi.c...
+../Source/System/usart.c(10): error: expected parameter declarator
+__align(8) char USART1_Tx_Buffer[USART1_TX_BUFFER_SIZE];
+        ^
+../Source/System/usart.c(10): error: expected ')'
+../Source/System/usart.c(10): note: to match this '('
+__align(8) char USART1_Tx_Buffer[USART1_TX_BUFFER_SIZE];
+       ^
+../Source/System/usart.c(10): warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+__align(8) char USART1_Tx_Buffer[USART1_TX_BUFFER_SIZE];
+^
+../Source/System/usart.c(10): error: expected ';' after top level declarator
+__align(8) char USART1_Tx_Buffer[USART1_TX_BUFFER_SIZE];
+          ^
+          ;
+../Source/System/usart.c(18): error: expected parameter declarator
+__align(8) char USART2_Tx_Buffer[USART2_TX_BUFFER_SIZE]; // USART2 输出缓冲区
+        ^
+../Source/System/usart.c(18): error: expected ')'
+../Source/System/usart.c(18): note: to match this '('
+__align(8) char USART2_Tx_Buffer[USART2_TX_BUFFER_SIZE]; // USART2 输出缓冲区
+       ^
+../Source/System/usart.c(18): warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+__align(8) char USART2_Tx_Buffer[USART2_TX_BUFFER_SIZE]; // USART2 输出缓冲区
+^
+../Source/System/usart.c(18): error: expected ';' after top level declarator
+__align(8) char USART2_Tx_Buffer[USART2_TX_BUFFER_SIZE]; // USART2 输出缓冲区
+          ^
+          ;
+../Source/System/usart.c(159): warning: result of comparison of constant 1024 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Wtautological-constant-out-of-range-compare]
+        if (USART2_Rx_Length >= USART2_RX_BUFFER_SIZE)
+            ~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+../Source/System/usart.c(254): error: '#pragma import' is an ARM Compiler 5 extension, and is not supported by ARM Compiler 6 [-Warmcc-pragma-import]
+#pragma import(__use_no_semihosting)
+        ^
+../Source/System/usart.c(255): error: redefinition of '__FILE'
+struct __FILE
+       ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(119): note: previous definition is here
+struct __FILE {
+       ^
+../Source/System/usart.c(260): warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+_sys_exit(int x)
+^
+4 warnings and 8 errors generated.
+compiling usart.c...
+compiling stm32f10x_usart.c...
+compiling rcc.c...
+compiling sys.c...
+compiling assert_param.c...
+compiling utils_hmac.c...
+compiling utils_md5.c...
+compiling stm32f10x_tim.c...
+compiling key.c...
+compiling led.c...
+compiling iic.c...
+compiling dht11.c...
+compiling wifi.c...
+compiling oled_iic.c...
+compiling main.c...
+compiling stm32f10x_it.c...
+compiling utils_sha1.c...
+../Source/Hardware/mqtt.c(234): warning: variable length array folded to constant array as an extension [-Wgnu-folding-constant]
+    const char variable_header[size_variable_header] = {0x00, 0x04, 0x4D, 0x51, 0x54, 0x54, 0x04, 0xC2, 0x00, 0x64};
+               ^
+../Source/Hardware/mqtt.c(385): warning: variable length array folded to constant array as an extension [-Wgnu-folding-constant]
+    const char variable_header[size_variable_header] = {0x00, 0x0A};
+               ^
+../Source/Hardware/mqtt.c(487): warning: variable length array folded to constant array as an extension [-Wgnu-folding-constant]
+    const char variable_header[size_variable_header] = {0x00, 0x0A};
+               ^
+3 warnings generated.
+compiling mqtt.c...
+../Source/User/test.c(340): warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+    printf(password_encoded); /* a16dd043e157e8fc5f2d6f2edafcd37034931dea */
+           ^~~~~~~~~~~~~~~~
+../Source/User/test.c(340): note: treat the string as an argument to avoid this
+    printf(password_encoded); /* a16dd043e157e8fc5f2d6f2edafcd37034931dea */
+           ^
+           "%s", 
+1 warning generated.
 compiling test.c...
-linking...
-Program Size: Code=13332 RO-data=992 RW-data=52 ZI-data=4708  
-FromELF: creating hex file...
-".\Objects\Project.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\Project.axf" - 12 Error(s), 8 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -44,7 +171,8 @@ Package Vendor: Keil
   C:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:02
+Target not created.
+Build Time Elapsed:  00:00:07
 </pre>
 </body>
 </html>
